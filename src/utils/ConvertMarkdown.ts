@@ -27,7 +27,7 @@ export const convertMarkdownLineToSign = (line: string): { type: Rule, value: st
 }
 
 export function convertMarkdownToProblem(markdown: string): Array<Problem> {
-    let lines: Array<string> = markdown.split('\n').filter(line => line !== '')
+    let lines: Array<string> = markdown.split('\n').filter(line => line !== '').filter(line => line.length > 1)
     let signs: Array<{
         type: Rule,
         value: string,
